@@ -66,7 +66,7 @@ EX.1.1 : BASIC COMMAND
          git add my_software
          git commit -m"commit directoy" 
 
- - 1.1.7 --CHECK-- Use git status to see the repo status
+ - 1.1.7 --**CHECK**-- Use git status to see the repo status
 
          git status
 
@@ -83,7 +83,7 @@ EX.1.1 : BASIC COMMAND
          git add .gitignore
          git commit -m"create gitignore file"
 
- - 1.1.10 --CHECK-- if directory my_software is now commited
+ - 1.1.10 --**CHECK**-- if directory my_software is now commited
 
          git ls-tree --full-tree -r master
 
@@ -126,19 +126,19 @@ EX1.2 : REMOTE COMMAND
 
          git push origin master
 
- - 1.2.5 --CHECK-- if syncronization is completed,  can you see tag in ORIGIN?
+ - 1.2.5 --**CHECK**-- if syncronization is completed,  can you see tag in ORIGIN?
 
  - 1.2.6 Push the tag to ORIGIN
 
          git push origin --tags
 
- - 1.2.7 --CHECK-- if syncronization is really completed
+ - 1.2.7 --**CHECK**-- if syncronization is really completed
 
  - 1.2.8 Create a remote repo for BACKUP and add it to local repo
 
          git remote add backup url_backup_repo 
 
- - 1.2.9 --CHECK-- if local repo is linked with ORIGIN and BACKUP
+ - 1.2.9 --**CHECK**-- if local repo is linked with ORIGIN and BACKUP
 
          git remote -v
 
@@ -153,7 +153,7 @@ EX.1.3 : BRANCH COMMAND
 
          git checkout -b dev
 
- - 1.3.2 --CHECK-- how many branches exists in local repository
+ - 1.3.2 --**CHECK**-- how many branches exists in local repository
 
          git branch
 
@@ -194,7 +194,7 @@ EX.1.3 : BRANCH COMMAND
 
          git rebase dev
 
- - 1.3.10 --CHECK-- use git log to see the new diagram of branches, observe the difference between rebase and merge
+ - 1.3.10 --**CHECK**-- use git log to see the new diagram of branches, observe the difference between rebase and merge
 
          git log --all --graph --decorate --oneline
 
