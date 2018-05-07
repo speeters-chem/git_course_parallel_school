@@ -38,7 +38,7 @@ EX.1.1 : BASIC COMMAND
       
        mkdir ex1_1
        cd ex1_1
-       git init remote_url
+       git init 
 
  - 1.1.2 Create README file in repo
 
@@ -100,7 +100,7 @@ EX.1.1 : BASIC COMMAND
 
  - 1.1.14 Change main.py and commit, check with git diff the difference between HEAD and previous commit
        
-        echo "print("Hello World")" >> main.py
+        echo "print(\"Hello World\")" >> main.py
         git add main.py
         git commit -m "create Hello World software"
         git diff HEAD HEAD^
@@ -144,6 +144,54 @@ EX1.2 : REMOTE COMMAND
 EX.1.3 : BRANCH COMMAND
 ------------------------
 
+ - 1.3.1 Create branch
+
+       git checkout -b dev
+
+ - 1.3.2 Check how many branches have on local repository
+
+       git branch
+
+ - 1.3.3 Modify io.py file and commit
+      
+       echo "print(\" I'm IO \")" >> io.py
+       git add io.py
+       git commit -m "change io.py"
+
+ - 1.3.4 Return to Master branch and change main.py file and commit
+      
+       git checout master
+       echo "print(\" I'm main \")" >> main.py
+       git add main.py
+       git commit -m "change main.py"
+
+ - 1.3.5 Return to dev and change log.py file and commit
+
+       git checout master
+       echo "print(\" I'm LOG \")" >> log.py
+       git add log.py
+       git commit -m "change log.py"
+
+- 1.3.6 Return to master and merge it with DEV branch
+
+      git checkout master 
+      git merge dev
+
+- 1.3.7 Show the branches diagram with git log
+
+      git log --all --graph --decorate --oneline
+
+- 1.3.8 Reset the last commit in order to try rebase of branches instead of merge
+
+      git reset --hard HEAD^
+
+- 1.3.9 Use git rebase 
+
+      git rebase dev
+
+- 1.3.10 Check with git log the new diagram of branches and see the difference between rebase and merge
+
+      git log --all --graph --decorate --oneline
 
 
 **EX.2 : Team Dev**
