@@ -8,7 +8,7 @@ Author :
 Version :  Cineca Parallel Summer School 2018
 
 **EX.0 : Configuration**
-====================
+========================
 
  - 0.0.1 Check if git is installed on your machine
 
@@ -29,7 +29,7 @@ Version :  Cineca Parallel Summer School 2018
 
 
 **EX.1: Single Dev**
-=========
+====================
 
 EX.1.1 : BASIC COMMAND
 -----------------------
@@ -106,7 +106,7 @@ EX.1.1 : BASIC COMMAND
         git diff HEAD HEAD^
 
 EX1.2 : REMOTE COMMAND
-----------------------
+-----------------------
 
  - 1.2.1 Create remote empty repository
  - 1.2.2 Show if your local repo have remote repo linked
@@ -115,7 +115,7 @@ EX1.2 : REMOTE COMMAND
 
  - 1.2.3 Copy remote repo URL and add to linked repo
 
-       git remote add your_url origin
+       git remote add origin your_url 
 
  - 1.2.4 Sync local and remotes repository with push command
 
@@ -131,7 +131,7 @@ EX1.2 : REMOTE COMMAND
 
  - 1.2.8 Create a remote repo for BACKUP, add as remote
 
-       git remote add url_backup_repo backup
+       git remote add backup url_backup_repo 
 
  - 1.2.9 Check if local repo is linked with ORIGIN and BACKUP
 
@@ -139,18 +139,12 @@ EX1.2 : REMOTE COMMAND
 
  - 1.2.10 Push local repo on BACKUP
 
-       git push backup master
-
-
-
-
-    
-
-
-
+       git push --tags backup master
 
 EX.1.3 : BRANCH COMMAND
------------------------
+------------------------
+
+
 
 **EX.2 : Team Dev**
 =========
