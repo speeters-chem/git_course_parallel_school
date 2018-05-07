@@ -21,13 +21,14 @@ EX.2.1 : SINGLE BRANCH
 - 2.1.6 --**CHECK**--  if history is syncronized on all repos
 - 2.1.7 Each member change different file
 - 2.1.8 Use push and pull to resync all repos
-- 2.1.9 Tl and OD change the same line on local repos
-- 2.1.10 TL commits and pushes his change on his remote repo.
-- 2.1.11 OD pull from TL's remote repo and manage the conflict
-- 2.1.12 --**CHECK**-- if all repos are syncronized
-- 2.1.13 OD change the same line, commit and push on their remote repos
-- 2.1.14 TL pulls from OD's remote repos, choose the correct change and manage the conflict
-- 2.1.15 --**CHECK**-- if all repos are syncronized
+- 2.1.9 --**CHECK**-- if all repos are syncronized
+- 2.1.10 TL and OD change the same line on local repos
+- 2.1.11 TL commits and pushes his change on his remote repo.
+- 2.1.12 OD pull from TL's remote repo and manage the conflict
+- 2.1.13 --**CHECK**-- if all repos are syncronized
+- 2.1.14 OD change the same line, commit and push on their remote repos
+- 2.1.15 TL pulls from OD's remote repos, choose the correct change and manage the conflict
+- 2.1.16 --**CHECK**-- if all repos are syncronized
 
 
 EX.2.2 : MULTIPLE BRANCH
