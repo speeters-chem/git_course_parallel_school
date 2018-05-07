@@ -62,8 +62,8 @@ EX.1.1 : BASIC COMMAND
 
  - 1.1.6 Try to commit "my_software" to repository, is it allowed?
 
-          git add my_software
-          git commit -m"commit directoy" 
+       git add my_software
+       git commit -m"commit directoy" 
 
  - 1.1.7 --CHECK-- Use git status to see the repo status
 
