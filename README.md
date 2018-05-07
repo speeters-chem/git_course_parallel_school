@@ -14,8 +14,9 @@ Follow the steps below to configure git on your machine.
 
  - 0.0.1 Is git installed in your machine?
 
-        git 
-        apt install git (Deb example)
+         git 
+         apt install git (Deb example)
+         
  - 0.0.2 Configure username and email for your remote hub account 
          
          git config --global user.name "Name Surname"
@@ -27,7 +28,7 @@ Follow the steps below to configure git on your machine.
 
  - 0.0.4 Show all git setting
 
-        git config --list 
+         git config --list 
 
 
 **EX.1: Single Dev**
@@ -39,75 +40,75 @@ EX.1.1 : BASIC COMMAND
 -----------------------
 
  - 1.1.1 Create a local empty repository 
-      
-       mkdir ex1_1
-       cd ex1_1
-       git init 
+         
+         mkdir ex1_1
+         cd ex1_1
+         git init 
 
  - 1.1.2 Create a README file in repo
 
-       touch README.md
+         touch README.md
   
  - 1.1.3 Add a new file to staging area
       
-       git add  README.md
+         git add  README.md
 
  - 1.1.4 Commit your changes
       
-       git commit -m "commit description"
+         git commit -m "commit description"
 
  - 1.1.5 Create a directory into repo
 
-       mkdir my_software
+         mkdir my_software
 
  - 1.1.6 Try to commit "my_software" to repository, is it allowed?
 
-       git add my_software
-       git commit -m"commit directoy" 
+         git add my_software
+         git commit -m"commit directoy" 
 
  - 1.1.7 --CHECK-- Use git status to see the repo status
 
-       git status
+         git status
 
  - 1.1.8 Create local_configuration file in "my_software"
 
-       cd my_software
-       touch local_configuration.cfg
+         cd my_software
+         touch local_configuration.cfg
 
  - 1.1.9 Use gitignore file to avoid wrong commit of local_configuration.cfg
        
-       touch .gitignore
-       echo "local_configuration.cfg" >> .gitignore
-       git statuts -u   # show untracked not ignored file
-       git add .gitignore
-       git commit -m"create gitignore file"
+         touch .gitignore
+         echo "local_configuration.cfg" >> .gitignore
+         git statuts -u   # show untracked not ignored file
+         git add .gitignore
+         git commit -m"create gitignore file"
 
  - 1.1.10 --CHECK-- if directory my_software is now commited
 
-       git ls-tree --full-tree -r master
+         git ls-tree --full-tree -r master
 
  - 1.1.11 Use git log to see the history of repo, how commit do you do?
 
-       git log
+         git log
 
  - 1.1.12 Use git ls-files to add multiple files to repository
       
-       cd my_software
-       touch main.py io.py log.py
-       git ls-files -o             #show list of untrucked files
-       git add $(git ls-files -o)  # don't worry ignored file will be not processed
-       git commit -m"create message"
+         cd my_software
+         touch main.py io.py log.py
+         git ls-files -o             #show list of untrucked files
+         git add $(git ls-files -o)  # don't worry ignored file will be not processed
+         git commit -m"create message"
 
  - 1.1.13 Use git tag to identify first code version
       
-        git tag v0.1 -m "code version 0.1"
+         git tag v0.1 -m "code version 0.1"
 
  - 1.1.14 Change main.py and commit, check with *git diff* the difference between HEAD and previous commit (HEAD^)
        
-        echo "print(\"Hello World\")" >> main.py
-        git add main.py
-        git commit -m "create Hello World software"
-        git diff HEAD HEAD^
+         echo "print(\"Hello World\")" >> main.py
+         git add main.py
+         git commit -m "create Hello World software"
+         git diff HEAD HEAD^
 
 EX1.2 : REMOTE COMMAND
 -----------------------
@@ -115,87 +116,87 @@ EX1.2 : REMOTE COMMAND
  - 1.2.1 Create a remote empty repository
  - 1.2.2 Show if your local repo has remote repo linked
 
-        git remote -v
+         git remote -v
 
  - 1.2.3 Copy remote repo URL and link with local repo, call it ORIGIN
 
-       git remote add origin your_url 
+         git remote add origin your_url 
 
  - 1.2.4 Sync local and ORIGIN with push command
 
-        git push origin master
+         git push origin master
 
  - 1.2.5 --CHECK-- if syncronization is completed,  can you see tag in ORIGIN?
 
  - 1.2.6 Push the tag to ORIGIN
 
-       git push origin --tags
+         git push origin --tags
 
  - 1.2.7 --CHECK-- if syncronization is really completed
 
  - 1.2.8 Create a remote repo for BACKUP and add it to local repo
 
-       git remote add backup url_backup_repo 
+         git remote add backup url_backup_repo 
 
  - 1.2.9 --CHECK-- if local repo is linked with ORIGIN and BACKUP
 
-       git remote -v
+         git remote -v
 
  - 1.2.10 Push local repo on BACKUP
 
-       git push --tags backup master
+         git push --tags backup master
 
 EX.1.3 : BRANCH COMMAND
 ------------------------
 
  - 1.3.1 Create  DEV branch
 
-       git checkout -b dev
+         git checkout -b dev
 
  - 1.3.2 --CHECK-- how many branches exists in local repository
 
-       git branch
+         git branch
 
  - 1.3.3 Modify io.py file and commit it
       
-       echo "print(\" I'm IO \")" >> io.py
-       git add io.py
-       git commit -m "change io.py"
+         echo "print(\" I'm IO \")" >> io.py
+         git add io.py
+         git commit -m "change io.py"
 
  - 1.3.4 Return to Master branch, modify main.py  and commit it
       
-       git checout master
-       echo "print(\" I'm main \")" >> main.py
-       git add main.py
-       git commit -m "change main.py"
+         git checout master
+         echo "print(\" I'm main \")" >> main.py
+         git add main.py
+         git commit -m "change main.py"
 
  - 1.3.5 Return to dev branch, change log.py  and commit it
 
-       git checout master
-       echo "print(\" I'm LOG \")" >> log.py
-       git add log.py
-       git commit -m "change log.py"
+         git checout master
+         echo "print(\" I'm LOG \")" >> log.py
+         git add log.py
+         git commit -m "change log.py"
 
-- 1.3.6 Return to master and merge it with DEV branch
+ - 1.3.6 Return to master and merge it with DEV branch
 
-      git checkout master 
-      git merge dev
+         git checkout master 
+         git merge dev
 
-- 1.3.7 Show the branches diagram with git log
+ - 1.3.7 Show the branches diagram with git log
 
-      git log --all --graph --decorate --oneline
+         git log --all --graph --decorate --oneline
 
-- 1.3.8 Reset the last commit in order to try **rebase** of branches instead of merge
+ - 1.3.8 Reset the last commit in order to try **rebase** of branches instead of merge
 
-      git reset --hard HEAD^
+         git reset --hard HEAD^
 
-- 1.3.9 Use git rebase 
+ - 1.3.9 Use git rebase 
 
-      git rebase dev
+         git rebase dev
 
-- 1.3.10 --CHECK-- use git log to see the new diagram of branches, observe the difference between rebase and merge
+ - 1.3.10 --CHECK-- use git log to see the new diagram of branches, observe the difference between rebase and merge
 
-      git log --all --graph --decorate --oneline
+         git log --all --graph --decorate --oneline
 
 
 **EX.2 : Team Dev**
