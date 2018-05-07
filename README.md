@@ -10,20 +10,22 @@ Version :  Cineca Parallel Summer School 2018
 **EX.0 : Configuration**
 ========================
 
- - 0.0.1 Check if git is installed on your machine
+Follow the steps below to configure git on your machine.
+
+ - 0.0.1 Is git installed in your machine?
 
         git 
         apt install git (Deb example)
- - 0.0.2 Configure username and email for your account 
+ - 0.0.2 Configure username and email for your remote hub account 
          
          git config --global user.name "Name Surname"
          git config --global user.email "name@example.com”
 
- - 0.0.3 Congfigure your prefered editor
+ - 0.0.3 Congfigure your favorite editor
          
          git config --global core.editor vim
 
- - 0.0.4 Show all setting
+ - 0.0.4 Show all git setting
 
         git config --list 
 
@@ -31,20 +33,22 @@ Version :  Cineca Parallel Summer School 2018
 **EX.1: Single Dev**
 ====================
 
+In this exercise you try the basic git command, how to set multiple remote repos and how manage branches workflow.
+
 EX.1.1 : BASIC COMMAND
 -----------------------
 
- - 1.1.1 Create local empty repository 
+ - 1.1.1 Create a local empty repository 
       
        mkdir ex1_1
        cd ex1_1
        git init 
 
- - 1.1.2 Create README file in repo
+ - 1.1.2 Create a README file in repo
 
        touch README.md
   
- - 1.1.3 Add new file to commit
+ - 1.1.3 Add a new file to staging area
       
        git add  README.md
 
@@ -52,7 +56,7 @@ EX.1.1 : BASIC COMMAND
       
        git commit -m "commit description"
 
- - 1.1.5 Create directory into repo
+ - 1.1.5 Create a directory into repo
 
        mkdir my_software
 
@@ -61,16 +65,16 @@ EX.1.1 : BASIC COMMAND
           git add my_software
           git commit -m"commit directoy" 
 
- - 1.1.7 Use git status to see the repo status
+ - 1.1.7 --CHECK-- Use git status to see the repo status
 
        git status
 
- - 1.1.8 Create local configuration file in "my_software"
+ - 1.1.8 Create local_configuration file in "my_software"
 
        cd my_software
        touch local_configuration.cfg
 
- - 1.1.9 Use gitignore file to avoid wrong commit on local_onfiguration.cfg
+ - 1.1.9 Use gitignore file to avoid wrong commit of local_configuration.cfg
        
        touch .gitignore
        echo "local_configuration.cfg" >> .gitignore
@@ -78,7 +82,7 @@ EX.1.1 : BASIC COMMAND
        git add .gitignore
        git commit -m"create gitignore file"
 
- - 1.1.10 Check if directory my_software is now commited
+ - 1.1.10 --CHECK-- if directory my_software is now commited
 
        git ls-tree --full-tree -r master
 
@@ -86,19 +90,19 @@ EX.1.1 : BASIC COMMAND
 
        git log
 
- - 1.1.12 Use git ls-files to add multiple file to repository
+ - 1.1.12 Use git ls-files to add multiple files to repository
       
        cd my_software
        touch main.py io.py log.py
-       git ls-files -o
-       git add $(git ls-files -o)
+       git ls-files -o             #show list of untrucked files
+       git add $(git ls-files -o)  # don't worry ignored file will be not processed
        git commit -m"create message"
 
  - 1.1.13 Use git tag to identify first code version
       
         git tag v0.1 -m "code version 0.1"
 
- - 1.1.14 Change main.py and commit, check with git diff the difference between HEAD and previous commit
+ - 1.1.14 Change main.py and commit, check with *git diff* the difference between HEAD and previous commit (HEAD^)
        
         echo "print(\"Hello World\")" >> main.py
         git add main.py
@@ -108,32 +112,32 @@ EX.1.1 : BASIC COMMAND
 EX1.2 : REMOTE COMMAND
 -----------------------
 
- - 1.2.1 Create remote empty repository
- - 1.2.2 Show if your local repo have remote repo linked
+ - 1.2.1 Create a remote empty repository
+ - 1.2.2 Show if your local repo has remote repo linked
 
         git remote -v
 
- - 1.2.3 Copy remote repo URL and add to linked repo
+ - 1.2.3 Copy remote repo URL and link with local repo, call it ORIGIN
 
        git remote add origin your_url 
 
- - 1.2.4 Sync local and remotes repository with push command
+ - 1.2.4 Sync local and ORIGIN with push command
 
         git push origin master
 
- - 1.2.5 Check if the remote repo is sycronized and if tag is presente remotelly
+ - 1.2.5 --CHECK-- if syncronization is completed,  can you see tag in ORIGIN?
 
- - 1.2.6 Push the tag
+ - 1.2.6 Push the tag to ORIGIN
 
        git push origin --tags
 
- - 1.2.7 Check now if tag is present in remote repo
+ - 1.2.7 --CHECK-- if syncronization is really completed
 
- - 1.2.8 Create a remote repo for BACKUP, add as remote
+ - 1.2.8 Create a remote repo for BACKUP and add it to local repo
 
        git remote add backup url_backup_repo 
 
- - 1.2.9 Check if local repo is linked with ORIGIN and BACKUP
+ - 1.2.9 --CHECK-- if local repo is linked with ORIGIN and BACKUP
 
        git remote -v
 
@@ -144,28 +148,28 @@ EX1.2 : REMOTE COMMAND
 EX.1.3 : BRANCH COMMAND
 ------------------------
 
- - 1.3.1 Create branch
+ - 1.3.1 Create  DEV branch
 
        git checkout -b dev
 
- - 1.3.2 Check how many branches have on local repository
+ - 1.3.2 --CHECK-- how many branches exists in local repository
 
        git branch
 
- - 1.3.3 Modify io.py file and commit
+ - 1.3.3 Modify io.py file and commit it
       
        echo "print(\" I'm IO \")" >> io.py
        git add io.py
        git commit -m "change io.py"
 
- - 1.3.4 Return to Master branch and change main.py file and commit
+ - 1.3.4 Return to Master branch, modify main.py  and commit it
       
        git checout master
        echo "print(\" I'm main \")" >> main.py
        git add main.py
        git commit -m "change main.py"
 
- - 1.3.5 Return to dev and change log.py file and commit
+ - 1.3.5 Return to dev branch, change log.py  and commit it
 
        git checout master
        echo "print(\" I'm LOG \")" >> log.py
@@ -181,7 +185,7 @@ EX.1.3 : BRANCH COMMAND
 
       git log --all --graph --decorate --oneline
 
-- 1.3.8 Reset the last commit in order to try rebase of branches instead of merge
+- 1.3.8 Reset the last commit in order to try **rebase** of branches instead of merge
 
       git reset --hard HEAD^
 
@@ -189,7 +193,7 @@ EX.1.3 : BRANCH COMMAND
 
       git rebase dev
 
-- 1.3.10 Check with git log the new diagram of branches and see the difference between rebase and merge
+- 1.3.10 --CHECK-- use git log to see the new diagram of branches, observe the difference between rebase and merge
 
       git log --all --graph --decorate --oneline
 
