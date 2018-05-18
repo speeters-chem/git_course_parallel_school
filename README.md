@@ -168,14 +168,14 @@ EX.1.3 : BRANCH COMMAND
 
  - 1.3.4 Return to Master branch, modify main.py  and commit it
       
-         git checout master
+         git checkout master
          echo "print(\" I'm main \")" >> main.py
          git add main.py
          git commit -m "change main.py"
 
  - 1.3.5 Return to dev branch, change log.py  and commit it
 
-         git checout master
+         git checkout dev
          echo "print(\" I'm LOG \")" >> log.py
          git add log.py
          git commit -m "change log.py"
