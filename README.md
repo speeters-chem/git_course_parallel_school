@@ -137,7 +137,7 @@ In this exercise we continue to work with the previous local repository.
 
  - 1.2.7 --**CHECK**-- if syncronization is really completed
 
- - 1.2.8 Create a remote repo for BACKUP and add it to the local repo
+ - 1.2.8 Create a  **new** remote repo for BACKUP and add it to the local repo
 
          git remote add backup url_backup_repo 
 
